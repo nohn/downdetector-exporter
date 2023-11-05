@@ -15,9 +15,8 @@ import (
 
 	"github.com/goccy/go-yaml"
 
-	"github.com/go-kit/kit/log"
-	kitlog "github.com/go-kit/kit/log"
-	"github.com/go-kit/kit/log/level"
+	kitlog "github.com/go-kit/log"
+	"github.com/go-kit/log/level"
 	"github.com/urfave/cli/v2"
 
 	"github.com/coreos/go-systemd/daemon"
@@ -273,7 +272,7 @@ func main() {
 
 			// Debugging output
 			lg = kitlog.NewLogfmtLogger(os.Stdout)
-			lg = kitlog.With(lg, "ts", log.DefaultTimestamp, "caller", kitlog.DefaultCaller)
+			lg = kitlog.With(lg, "ts", kitlog.DefaultTimestamp, "caller", kitlog.DefaultCaller)
 			switch logLevel {
 			case "DEBUG":
 				lg = level.NewFilter(lg, level.AllowDebug())
